@@ -9,9 +9,16 @@ script = ExtResource("1_abidj")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Button" type="Button" parent="CanvasLayer"]
-offset_right = 8.0
-offset_bottom = 8.0
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ButtonPrev" type="Button" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+text = "Prev"
+
+[node name="ButtonNext" type="Button" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
 text = "Next"
 
 [node name="Radio" parent="." instance=ExtResource("2_eyh8f")]
@@ -24,4 +31,5 @@ music_array = PackedStringArray("res://examples/NCS/music/DEAF KEV/Deaf Kev - In
 station_name = "Tobu"
 music_array = PackedStringArray("res://examples/NCS/music/Tobu/Tobu - Faster [NCS Release] instrumental.mp3", "res://examples/NCS/music/Tobu/Tobu - Memory Lane [NCS Release].mp3", "res://examples/NCS/music/Tobu/Tobu - Return To The Wild [NCS Release] instrumental.mp3")
 
-[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/HBoxContainer/ButtonPrev" to="." method="_on_button_prev_pressed"]
+[connection signal="pressed" from="CanvasLayer/HBoxContainer/ButtonNext" to="." method="_on_button_next_pressed"]
