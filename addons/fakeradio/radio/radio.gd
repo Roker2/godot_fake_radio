@@ -21,3 +21,15 @@ func switch_to(index: int) -> void:
 	current_station = index
 	if prev_playing:
 		play(position)
+
+func switch_to_next() -> void:
+	if current_station == stations.size() - 1:
+		switch_to(0)
+	else:
+		switch_to(current_station + 1)
+
+func switch_to_prev() -> void:
+	if current_station == 0:
+		switch_to(stations.size() - 1)
+	else:
+		switch_to(current_station - 1)
