@@ -12,6 +12,9 @@ func _ready() -> void:
 	stream = stations[current_station].get_station_playlist()
 
 func switch_to(index: int) -> void:
+	if index >= stations.size():
+		printerr("index is not valid")
+		return
 	var prev_playing = playing
 	var position = get_playback_position()
 	stream = stations[index].get_station_playlist()
