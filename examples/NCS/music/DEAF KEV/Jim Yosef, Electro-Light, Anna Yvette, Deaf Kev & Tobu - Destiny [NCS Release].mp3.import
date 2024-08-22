@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://diqhbt5qtolx4"
+path="res://.godot/imported/Jim Yosef, Electro-Light, Anna Yvette, Deaf Kev & Tobu - Destiny [NCS Release].mp3-5a8d86650eece8b591cdb5f91ac2853e.mp3str"
+
+[deps]
+
+source_file="res://examples/NCS/music/DEAF KEV/Jim Yosef, Electro-Light, Anna Yvette, Deaf Kev & Tobu - Destiny [NCS Release].mp3"
+dest_files=["res://.godot/imported/Jim Yosef, Electro-Light, Anna Yvette, Deaf Kev & Tobu - Destiny [NCS Release].mp3-5a8d86650eece8b591cdb5f91ac2853e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

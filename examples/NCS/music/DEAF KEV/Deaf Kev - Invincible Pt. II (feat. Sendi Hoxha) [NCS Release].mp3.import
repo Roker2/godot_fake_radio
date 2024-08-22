@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://rlo82dkp50xu"
+path="res://.godot/imported/Deaf Kev - Invincible Pt. II (feat. Sendi Hoxha) [NCS Release].mp3-21d6cea8dd92222cad2648653fc69d20.mp3str"
+
+[deps]
+
+source_file="res://examples/NCS/music/DEAF KEV/Deaf Kev - Invincible Pt. II (feat. Sendi Hoxha) [NCS Release].mp3"
+dest_files=["res://.godot/imported/Deaf Kev - Invincible Pt. II (feat. Sendi Hoxha) [NCS Release].mp3-21d6cea8dd92222cad2648653fc69d20.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

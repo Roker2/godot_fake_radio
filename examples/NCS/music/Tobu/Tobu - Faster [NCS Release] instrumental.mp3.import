@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b7hefpl2n68bg"
+path="res://.godot/imported/Tobu - Faster [NCS Release] instrumental.mp3-a1b99be10047bfcfee0908f5e4c43dcb.mp3str"
+
+[deps]
+
+source_file="res://examples/NCS/music/Tobu/Tobu - Faster [NCS Release] instrumental.mp3"
+dest_files=["res://.godot/imported/Tobu - Faster [NCS Release] instrumental.mp3-a1b99be10047bfcfee0908f5e4c43dcb.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

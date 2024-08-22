@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bb8i4pgspiu2a"]
+
+[ext_resource type="Script" path="res://examples/NCS/main_scene.gd" id="1_abidj"]
+[ext_resource type="PackedScene" uid="uid://cfjr3svlqybel" path="res://addons/fakeradio/radio/radio.tscn" id="2_eyh8f"]
+[ext_resource type="PackedScene" uid="uid://0vgcko58rc8t" path="res://addons/fakeradio/station/station.tscn" id="3_eij4x"]
+
+[node name="MainScene" type="Node2D"]
+script = ExtResource("1_abidj")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Next"
+
+[node name="Radio" parent="." instance=ExtResource("2_eyh8f")]
+
+[node name="DEAF KEV" parent="Radio" instance=ExtResource("3_eij4x")]
+station_name = "DEAF KEV"
+music_array = PackedStringArray("res://examples/NCS/music/DEAF KEV/Deaf Kev - Invincible Pt. II (feat. Sendi Hoxha) [NCS Release].mp3", "res://examples/NCS/music/DEAF KEV/DEAF KEV - Invincible [NCS Release].mp3", "res://examples/NCS/music/DEAF KEV/Jim Yosef, Electro-Light, Anna Yvette, Deaf Kev & Tobu - Destiny [NCS Release].mp3")
+
+[node name="Tobu" parent="Radio" instance=ExtResource("3_eij4x")]
+station_name = "Tobu"
+music_array = PackedStringArray("res://examples/NCS/music/Tobu/Tobu - Faster [NCS Release] instrumental.mp3", "res://examples/NCS/music/Tobu/Tobu - Memory Lane [NCS Release].mp3", "res://examples/NCS/music/Tobu/Tobu - Return To The Wild [NCS Release] instrumental.mp3")
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
