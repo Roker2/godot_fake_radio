@@ -47,6 +47,12 @@ func switch_to_prev() -> void:
 	else:
 		switch_to(current_station - 1)
 
+func get_station_name() -> String:
+	return _get_current_station().station_name
+
+func get_station_description() -> String:
+	return _get_current_station().station_description
+
 func _get_current_station() -> Station:
 	return stations[current_station]
 
