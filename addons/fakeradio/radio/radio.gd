@@ -2,6 +2,8 @@ extends AudioStreamPlayer
 
 class_name Radio
 
+signal station_is_changed
+
 @export var current_station = 0
 @export_enum("Idle", "Physics") var process_callback: String = "Idle"
 var stations: Array[Station]
@@ -12,12 +14,14 @@ func _ready() -> void:
 	for child in get_children():
 		if child is Station:
 			stations.append(child)
-	stream = stations[current_station].get_station_playlist()
+	stream = _get_current_station().get_station_playlist()
 
 func play_radio() -> void:
+	station_is_changed.emit()
 	play(stopwatch)
 
 func stop_radio() -> void:
+	station_is_changed.emit()
 	stop()
 
 func switch_to(index: int) -> void:
@@ -29,6 +33,7 @@ func switch_to(index: int) -> void:
 	current_station = index
 	if prev_playing:
 		play(stopwatch)
+	station_is_changed.emit()
 
 func switch_to_next() -> void:
 	if current_station == stations.size() - 1:
@@ -41,6 +46,9 @@ func switch_to_prev() -> void:
 		switch_to(stations.size() - 1)
 	else:
 		switch_to(current_station - 1)
+
+func _get_current_station() -> Station:
+	return stations[current_station]
 
 func _process(delta: float) -> void:
 	if not process_stopwatch_in_physics:
