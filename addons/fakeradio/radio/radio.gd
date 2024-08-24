@@ -15,6 +15,9 @@ func _ready() -> void:
 		if child is Station:
 			stations.append(child)
 	stream = _get_current_station().get_station_playlist()
+	
+	if process_callback == "Physics":
+		process_stopwatch_in_physics = true
 
 func play_radio() -> void:
 	station_is_changed.emit()
