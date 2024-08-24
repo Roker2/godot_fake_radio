@@ -9,27 +9,38 @@ script = ExtResource("1_abidj")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="ButtonPrev" type="Button" parent="CanvasLayer/HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ButtonPrev" type="Button" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "Prev"
 
-[node name="ButtonNext" type="Button" parent="CanvasLayer/HBoxContainer"]
+[node name="ButtonNext" type="Button" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "Next"
+
+[node name="LabelRadioName" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+
+[node name="LabelRadioDesc" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
 
 [node name="Radio" parent="." instance=ExtResource("2_eyh8f")]
 
 [node name="DEAF KEV" parent="Radio" instance=ExtResource("3_eij4x")]
 station_name = "DEAF KEV"
+station_description = "Music by DEAF KEV"
 music_array = PackedStringArray("res://examples/NCS/music/DEAF KEV/Deaf Kev - Invincible Pt. II (feat. Sendi Hoxha) [NCS Release].mp3", "res://examples/NCS/music/DEAF KEV/DEAF KEV - Invincible [NCS Release].mp3", "res://examples/NCS/music/DEAF KEV/Jim Yosef, Electro-Light, Anna Yvette, Deaf Kev & Tobu - Destiny [NCS Release].mp3")
 
 [node name="Tobu" parent="Radio" instance=ExtResource("3_eij4x")]
 station_name = "Tobu"
+station_description = "Music by Tobu"
 music_array = PackedStringArray("res://examples/NCS/music/Tobu/Tobu - Faster [NCS Release] instrumental.mp3", "res://examples/NCS/music/Tobu/Tobu - Memory Lane [NCS Release].mp3", "res://examples/NCS/music/Tobu/Tobu - Return To The Wild [NCS Release] instrumental.mp3")
 
-[connection signal="pressed" from="CanvasLayer/HBoxContainer/ButtonPrev" to="." method="_on_button_prev_pressed"]
-[connection signal="pressed" from="CanvasLayer/HBoxContainer/ButtonNext" to="." method="_on_button_next_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/HBoxContainer/ButtonPrev" to="." method="_on_button_prev_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/HBoxContainer/ButtonNext" to="." method="_on_button_next_pressed"]
