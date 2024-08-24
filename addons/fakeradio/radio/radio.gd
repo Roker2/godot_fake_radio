@@ -14,6 +14,12 @@ func _ready() -> void:
 			stations.append(child)
 	stream = stations[current_station].get_station_playlist()
 
+func play_radio() -> void:
+	play(stopwatch)
+
+func stop_radio() -> void:
+	stop()
+
 func switch_to(index: int) -> void:
 	if index >= stations.size():
 		printerr("index is not valid")
