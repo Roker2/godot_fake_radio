@@ -3,6 +3,7 @@ extends Node
 class_name Station
 
 @export var station_name: String = "Station"
+@export var station_description: String = ""
 @export var music_array: PackedStringArray
 @export var shuffle: bool = true
 var playlist: AudioStreamPlaylist
