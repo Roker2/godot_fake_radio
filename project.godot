@@ -13,7 +13,7 @@ config_version=5
 config/name="FakeRadio"
 run/main_scene="res://examples/NCS/main_scene.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://icon.png"
 
 [editor_plugins]
 
