@@ -6,8 +6,12 @@ class_name Radio
 ## Allows to play, stop listening audio streams from stations and to switch
 ## between stations
 
-## Emitted when stations is changed
+## Emitted when a station is changed
 signal station_is_changed
+## Emitted when a radio is stopped work
+signal stopped
+## Emitted when a radio is started to work
+signal started
 
 ## A current stations
 @export var current_station = 0
@@ -29,12 +33,12 @@ func _ready() -> void:
 ## Enable a radio
 func play_radio() -> void:
 	play(_stopwatch)
-	station_is_changed.emit()
+	started.emit()
 
 ## Stop a radio
 func stop_radio() -> void:
 	stop()
-	station_is_changed.emit()
+	stopped.emit()
 
 ## Switch to another station by index
 func switch_to(index: int) -> void:
