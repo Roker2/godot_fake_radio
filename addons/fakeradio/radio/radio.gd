@@ -1,10 +1,17 @@
 extends AudioStreamPlayer
-
 class_name Radio
 
+## Radio class.
+##
+## Allows to play, stop listening audio streams from stations and to switch
+## between stations
+
+## Emitted when stations is changed
 signal station_is_changed
 
+## A current stations
 @export var current_station = 0
+## Allow to choose process callback backend
 @export_enum("Idle", "Physics") var process_callback: String = "Idle"
 var _stations: Array[Station]
 var _stopwatch: float = 0
@@ -19,14 +26,17 @@ func _ready() -> void:
 	if process_callback == "Physics":
 		_process_stopwatch_in_physics = true
 
+## Enable a radio
 func play_radio() -> void:
 	play(_stopwatch)
 	station_is_changed.emit()
 
+## Stop a radio
 func stop_radio() -> void:
 	stop()
 	station_is_changed.emit()
 
+## Switch to another station by index
 func switch_to(index: int) -> void:
 	if index >= _stations.size():
 		printerr("index is not valid")
@@ -38,21 +48,25 @@ func switch_to(index: int) -> void:
 		play(_stopwatch)
 	station_is_changed.emit()
 
+## Switch to next station
 func switch_to_next() -> void:
 	if current_station == _stations.size() - 1:
 		switch_to(0)
 	else:
 		switch_to(current_station + 1)
 
+## Switch to previous station
 func switch_to_prev() -> void:
 	if current_station == 0:
 		switch_to(_stations.size() - 1)
 	else:
 		switch_to(current_station - 1)
 
+## Get stattion name
 func get_station_name() -> String:
 	return _get_current_station().station_name
 
+## Get station description
 func get_station_description() -> String:
 	return _get_current_station().station_description
 

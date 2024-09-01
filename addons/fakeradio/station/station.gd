@@ -1,11 +1,19 @@
 extends Node
-
 class_name Station
 
+## Station class.
+##
+## Allow to create a music playlist as a radio station.
+
+## A station name
 @export var station_name: String = "Station"
+## A station descrition
 @export var station_description: String = ""
+## A music list
 @export var music_array: PackedStringArray
+## Shuffle a music list or not
 @export var shuffle: bool = true
+## A generated audio stream playlist
 var playlist: AudioStreamPlaylist
 
 func _ready() -> void:
@@ -20,5 +28,6 @@ func _ready() -> void:
 	for i in streams.size():
 		playlist.set_list_stream(i, streams[i])
 
+## Returns generated audio stream playlist
 func get_station_playlist() -> AudioStreamPlaylist:
 	return playlist
