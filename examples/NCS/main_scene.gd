@@ -6,6 +6,7 @@ extends Node2D
 
 func _ready() -> void:
 	radio.station_is_changed.connect(update_info)
+	radio.started.connect(update_info)
 	radio.play_radio()
 
 
